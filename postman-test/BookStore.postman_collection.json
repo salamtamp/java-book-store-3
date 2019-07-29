@@ -1,0 +1,287 @@
+{
+	"info": {
+		"name": "BookStore",
+		"_postman_id": "ddb68fa8-efc4-8f8c-5956-f04d924eb31a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Books >> localhost:8080/books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/books",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Book >> localhost:8080/books/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/books/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Books >> localhost:8080/books",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"book_name\": \"Before We Were Yours: A Novel\",\n    \"price\": 340,\n    \"author_name\": \"Lisa Wingate\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"When Never Comes\",\n    \"price\": 179,\n    \"author_name\": \"Barbara Davis\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"Giraffes Can't Dance\",\n    \"price\": 200.5,\n    \"author_name\": \"Giles Andreae, Guy Parker-Rees\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"The Great Alone: A Novel Kristin Hannah\",\n    \"price\": 495,\n    \"author_name\": \"Kristin Hannah\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"An American Princess: The Many Lives of Allene Tew\",\n    \"price\": 149,\n    \"author_name\": \"Annejet van der Zijl, Michele Hutchison\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"Medical Medium Life-Changing Foods\",\n    \"price\": 929.7,\n    \"author_name\": \"Anthony William\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"Vegan 100\",\n    \"price\": 897.96,\n    \"author_name\": \"Gaz Oakley\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"Have You Filled A Bucket Today?\",\n    \"price\": 290.06,\n    \"author_name\": \"Carol McCloud\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"The Very Hungry Caterpillar\",\n    \"price\": 208.51,\n    \"author_name\": \"Eric Carle\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"The Hate U Give\",\n    \"price\": 319.16,\n    \"author_name\": \"Angie Thomas\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"The Alice Network\",\n    \"price\": 393.22,\n    \"author_name\": \"Kate Quinn\",\n    \"is_recommended\": \"no\"\n  },\n  {\n    \"book_name\": \"Harry Potter - A History of Magic\",\n    \"price\": 1379.78,\n    \"author_name\": \"British Library\",\n    \"is_recommended\": \"no\"\n  }\n]"
+						},
+						"url": {
+							"raw": "localhost:8080/books",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "List All User >> localhost:8080/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific User  >> localhost:8080/users/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"john\",\n\t\"surname\": \"doe\",\n\t\"date_of_birth\": \"1985-01-15T00:00:00.000+0700\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create User >> localhost:8080/users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"john.doe\",\n\t\"password\": \"thisismysecret\",\n\t\"date_of_birth\": \"15/01/1985\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User 1 >> localhost:8080/users/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create User Order to User 1 >> localhost:8080/users/orders/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orders\": [1, 4]\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/users/orders/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"orders",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Healthcheck >> localhost:8080/healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/healthcheck",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"healthcheck"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login >> localhost:8080/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"user\",\n\t\"password\": \"pass\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
