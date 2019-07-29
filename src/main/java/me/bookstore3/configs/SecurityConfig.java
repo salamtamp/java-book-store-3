@@ -17,12 +17,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
        
     }
 	
+	private static final String[] AUTH_WHITELIST = {
+            "/swagger-resources/**",
+            "/swagger-ui.html",
+            "/v2/api-docs",
+            "/webjars/**"
+    };
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
 			.httpBasic()
 			.and()
 			.authorizeRequests()
+			.antMatchers(AUTH_WHITELIST).permitAll()
 //			.antMatchers(HttpMethod.GET, "/books").hasRole("USER") /* Get All Books */
 //			.antMatchers(HttpMethod.POST, "/books").hasRole("USER")
 			.antMatchers(HttpMethod.DELETE, "/books/**").hasRole("USER")
