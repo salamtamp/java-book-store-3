@@ -16,6 +16,7 @@ public class User {
 	private Date date_of_birth;
 	private String username;
 	private String password;
+	private String role;
 	protected User() {
 		
 	}
@@ -27,6 +28,7 @@ public class User {
 		this.date_of_birth = date_of_birth;
 		this.username = username;
 		this.password = password;
+		this.role = "USER";
 	}
 	public Integer getId() {
 		return id;
@@ -64,12 +66,19 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", surname=" + surname + ", date_of_birth=" + date_of_birth
-				+ ", username=" + username + ", password=" + password + "]";
-	}
-		
+				+ ", username=" + username + ", password=" + password + ", role=" + role + "]";
+	}	
 }
 
 

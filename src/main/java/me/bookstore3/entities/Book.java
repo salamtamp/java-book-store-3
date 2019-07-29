@@ -60,6 +60,4 @@ public class Book {
 		return "Book [id=" + id + ", name=" + name + ", author=" + author + ", price=" + price + ", is_recommended="
 				+ is_recommended + "]";
 	}
-	
-	
 }
