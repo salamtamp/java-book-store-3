@@ -1,5 +1,6 @@
 package me.bookstore3.resources;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import me.bookstore3.entities.Book;
 import me.bookstore3.entities.Orders;
 import me.bookstore3.entities.RequestOrder;
+import me.bookstore3.entities.RequestUser;
 import me.bookstore3.entities.User;
 import me.bookstore3.services.UserService;
 import me.bookstore3.services.BookService;
@@ -41,8 +43,14 @@ public class UserResource {
 	}
 	
 	@PostMapping(path="/users")
-	public void createUser(@RequestBody User user) {
-		userService.createUser(user);
+	public void createUser(@RequestBody RequestUser requestUser) {
+		String username = requestUser.getUsername();
+		String password = requestUser.getPassword();
+		String name = username.substring(0, username.indexOf("."));
+		String surname = username.substring(username.indexOf(".") + 1, username.length());  
+		Date date_of_birth = requestUser.getDate_of_birth();
+		
+		userService.createUser(new User(name, surname, date_of_birth, username, password));
 	}
 	
 	@PostMapping(path="/users/orders/{userId}")
