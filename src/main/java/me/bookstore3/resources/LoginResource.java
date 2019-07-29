@@ -16,8 +16,5 @@ public class LoginResource {
 		
 		System.out.println("username: " + username);
 		System.out.println("password: " + password);
-		
-//		auth.inMemoryAuthentication()
-//        .withUser("user1").password(passwordEncoder().encode("user1Pass")).roles("USER")
 	}
 }

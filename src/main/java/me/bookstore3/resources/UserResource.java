@@ -1,16 +1,22 @@
 package me.bookstore3.resources;
 
+import java.net.URI;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import me.bookstore3.entities.Book;
 import me.bookstore3.entities.Orders;
@@ -43,14 +49,17 @@ public class UserResource {
 	}
 	
 	@PostMapping(path="/users")
-	public void createUser(@RequestBody RequestUser requestUser) {
+	public ResponseEntity<Object> createUser(@RequestBody RequestUser requestUser) {
 		String username = requestUser.getUsername();
 		String password = requestUser.getPassword();
 		String name = username.substring(0, username.indexOf("."));
 		String surname = username.substring(username.indexOf(".") + 1, username.length());  
 		Date date_of_birth = requestUser.getDate_of_birth();
 		
-		userService.createUser(new User(name, surname, date_of_birth, username, password));
+		User createdUser = userService.createUser(new User(name, surname, date_of_birth, username, password));
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdUser.getId()).toUri();
+		
+		return ResponseEntity.created(location).build();
 	}
 	
 	@PostMapping(path="/users/orders/{userId}")
@@ -69,11 +78,11 @@ public class UserResource {
 			Orders newOrder = new Orders(userId, bookId, price);
 			orderService.createOrder(newOrder);
 			totalPrice += price;
-		}
+		}	
 		
-		return Double.toString(totalPrice);
+		return totalPrice.toString();
 	}
-	
+
 	@DeleteMapping(path="/users/{id}")
 	public void deleteUser(@PathVariable Integer id) {
 		userService.deleteUser(id);

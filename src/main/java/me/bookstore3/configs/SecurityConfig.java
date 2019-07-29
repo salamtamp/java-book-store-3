@@ -24,11 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 			.authorizeRequests()
 //			.antMatchers(HttpMethod.GET, "/books").hasRole("USER") /* Get All Books */
-			.antMatchers(HttpMethod.POST, "/books").hasRole("USER")
+//			.antMatchers(HttpMethod.POST, "/books").hasRole("USER")
 			.antMatchers(HttpMethod.DELETE, "/books/**").hasRole("USER")
 //			.antMatchers(HttpMethod.GET, "/users/**").hasRole("USER")
 //			.antMatchers(HttpMethod.POST, "/users").hasRole("USER") /* Create User */
-			.antMatchers(HttpMethod.DELETE, "/users/**").hasRole("USER")
+//			.antMatchers(HttpMethod.DELETE, "/users/**").hasRole("USER")
 			.and()
 			.csrf().disable()
 			.formLogin().disable();

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import me.bookstore3.entities.Book;
 import me.bookstore3.entities.RequestBook;
@@ -90,7 +91,5 @@ public class BookResource {
 			bookService.createBook(newBook);			
 		}
 	}
-	
-	
 	
 }
