@@ -25,7 +25,7 @@ public class BookResource {
 	}
 	
 	@GetMapping(path="/books/{id}")
-	public Optional<Book> getBook(@PathVariable Integer id) {
+	public Book getBook(@PathVariable Integer id) {
 		return bookService.getBook(id);
 	}
 	
