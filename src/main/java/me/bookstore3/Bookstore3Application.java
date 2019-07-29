@@ -1,14 +1,13 @@
-package me.bookstore;
-
+package me.bookstore3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BookstoreApplication {
+public class Bookstore3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookstoreApplication.class, args);
+		SpringApplication.run(Bookstore3Application.class, args);
 	}
 
 }
